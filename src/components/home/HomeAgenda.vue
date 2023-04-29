@@ -1,5 +1,5 @@
 <template>
-  <div class="section lg:py-24 main-bg">
+  <div class="section lg:py-24 main-bg scroll-mt-16" id="about">
     <div class="container">
       <div class="max-w-[900px] mx-auto text-center mb-20">
         <h3 class="font-medium text-primary text-xl lg:text-3xl mb-4" data-aos="fade">
@@ -52,7 +52,7 @@
 
 <style scoped>
 .main-bg {
-  background-image: url('/img/bg-01.svg'), url('/img/bg-02.svg');
+  background-image: url("/img/bg-01.svg"), url("/img/bg-02.svg");
   background-repeat: no-repeat;
   background-position: bottom 0px left 0px, top 0px right 0px;
 }
