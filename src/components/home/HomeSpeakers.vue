@@ -1,5 +1,5 @@
 <template>
-  <div class="section py-20 bg-[#660066] text-white">
+  <div class="section py-20 bg-[#660066] text-white scroll-mt-16" id="speakers">
     <div class="container">
       <div class="text-center max-w-[650px] mx-auto">
         <h5 class="font-medium text-xl lg:text-3xl mb-4" data-aos="fade">Our Speakers</h5>
@@ -36,36 +36,36 @@
 <script setup lang="ts">
 const items = [
   {
-    src: 'speaker-01.png',
-    name: 'Abdullah Sulaiman',
-    role: 'Senior Advocate at MSSN Lagos, Nigeria.'
+    src: "speaker-01.png",
+    name: "Abdullah Sulaiman",
+    role: "Senior Advocate at MSSN Lagos, Nigeria.",
   },
   {
-    src: 'speaker-02.png',
-    name: 'Mariam Lawal',
-    role: 'Senior Advocate at MSSN Lagos, Nigeria.'
+    src: "speaker-02.png",
+    name: "Mariam Lawal",
+    role: "Senior Advocate at MSSN Lagos, Nigeria.",
   },
   {
-    src: 'speaker-03.png',
-    name: 'Abdullah Sulaiman',
-    role: 'Senior Advocate at MSSN Lagos, Nigeria.'
+    src: "speaker-03.png",
+    name: "Abdullah Sulaiman",
+    role: "Senior Advocate at MSSN Lagos, Nigeria.",
   },
   {
-    src: 'speaker-04.png',
-    name: 'Mariam Lawal',
-    role: 'Senior Advocate at MSSN Lagos, Nigeria.'
+    src: "speaker-04.png",
+    name: "Mariam Lawal",
+    role: "Senior Advocate at MSSN Lagos, Nigeria.",
   },
   {
-    src: 'speaker-05.png',
-    name: 'Abdullah Sulaiman',
-    role: 'Senior Advocate at MSSN Lagos, Nigeria.'
+    src: "speaker-05.png",
+    name: "Abdullah Sulaiman",
+    role: "Senior Advocate at MSSN Lagos, Nigeria.",
   },
   {
-    src: 'speaker-06.png',
-    name: 'Mariam Lawal',
-    role: 'Senior Advocate at MSSN Lagos, Nigeria.'
-  }
-]
+    src: "speaker-06.png",
+    name: "Mariam Lawal",
+    role: "Senior Advocate at MSSN Lagos, Nigeria.",
+  },
+];
 </script>
 
 <style scoped>

@@ -12,10 +12,22 @@
           :class="{ 'open-navbar': show }"
         >
           <ul class="block text-center lg:flex lg:gap-x-9 lg:m-0 lg:items-center">
-            <li class="mb-8 lg:m-0 mt-10" v-for="route in routes" :key="route.path">
-              <RouterLink :to="route.path" active-class="header-link">{{
+            <li
+              class="mb-8 lg:m-0 mt-10"
+              v-for="route in routes"
+              :key="route.path"
+              @click="handleRouting(route)"
+            >
+              <RouterLink
+                :to="route.path"
+                active-class="active-link"
+                v-if="route.reroute"
+              >
+                {{ route.name }}
+              </RouterLink>
+              <a :href="route.path" :class="{ 'active-link': route.active }" v-else>{{
                 route.name
-              }}</RouterLink>
+              }}</a>
             </li>
           </ul>
         </nav>
@@ -49,45 +61,67 @@
 </template>
 
 <script setup lang="ts">
-const routes = [
+const routes = ref<{ name: string; path: string; active: boolean; reroute: boolean }[]>([
   {
-    name: 'Home',
-    path: '/'
+    name: "Home",
+    path: "/",
+    active: true,
+    reroute: true,
   },
   {
-    name: 'About',
-    path: '/'
+    name: "About",
+    path: "#about",
+    active: false,
+    reroute: false,
   },
   {
-    name: 'Speakers',
-    path: '/'
+    name: "Events",
+    path: "/events",
+    active: false,
+    reroute: true,
   },
   {
-    name: 'Sponsors',
-    path: '/'
+    name: "Speakers",
+    path: "#speakers",
+    active: false,
+    reroute: false,
   },
   {
-    name: 'FAQs',
-    path: '/'
-  }
-]
-const show = ref(false)
+    name: "Sponsors",
+    path: "#sponsors",
+    active: false,
+    reroute: false,
+  },
+  {
+    name: "FAQs",
+    path: "#faq",
+    active: false,
+    reroute: false,
+  },
+]);
+const show = ref(false);
+
+const handleRouting = (status: { name: string; path: string; active: boolean }) => {
+  routes.value.forEach((link) => (link.active = false));
+  status.active = !status.active;
+  console.log(status);
+};
 
 const toggleNav = () => {
-  show.value = !show.value
-}
+  show.value = !show.value;
+};
 
-const router = useRouter()
+const router = useRouter();
 
 onMounted(() => {
   router.beforeEach(() => {
-    show.value = false
-  })
-})
+    show.value = false;
+  });
+});
 </script>
 
 <style scoped>
-.header-link {
-  /* @apply text-secondary; */
+.active-link {
+  @apply relative after:absolute after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:content-[''] after:bg-[#FF6633] after:w-[80%] after:h-1 after:rounded-full text-lg font-semibold text-primary;
 }
 </style>
