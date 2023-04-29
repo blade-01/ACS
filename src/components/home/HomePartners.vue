@@ -1,5 +1,5 @@
 <template>
-  <div class="section py-20 bg-white">
+  <div class="section py-20 bg-white scroll-mt-16" id="sponsors">
     <div class="container">
       <div class="text-center">
         <h4 class="font-medium text-primary text-xl lg:text-3xl mb-4" data-aos="fade">
@@ -26,15 +26,15 @@
 
 <script setup lang="ts">
 const items = [
-  'partner-01.svg',
-  'partner-02.svg',
-  'partner-03.svg',
-  'partner-04.svg',
-  'partner-05.svg',
-  'partner-06.svg',
-  'partner-07.svg',
-  'partner-08.svg'
-]
+  "partner-01.svg",
+  "partner-02.svg",
+  "partner-03.svg",
+  "partner-04.svg",
+  "partner-05.svg",
+  "partner-06.svg",
+  "partner-07.svg",
+  "partner-08.svg",
+];
 </script>
 
 <style scoped>
