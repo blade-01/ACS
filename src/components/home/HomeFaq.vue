@@ -1,5 +1,5 @@
 <template>
-  <div class="section py-20">
+  <div class="section py-20 scroll-mt-16" id="faq">
     <div class="container">
       <div class="text-center max-w-[650px] mx-auto">
         <h6 class="font-medium text-xl lg:text-3xl mb-4 text-primary" data-aos="fade">
@@ -32,7 +32,7 @@
             :class="[
               item.id === selectedId
                 ? 'max-h-[500px] transition-[max-height] ease-in duration-400 bg-white'
-                : 'max-h-0 overflow-hidden transition-[max-height] ease-out duration-200 bg-[#FAFAFA]'
+                : 'max-h-0 overflow-hidden transition-[max-height] ease-out duration-200 bg-[#FAFAFA]',
             ]"
           >
             <p class="font-medium 1xl:text-lg text-[#525252]">
@@ -46,42 +46,42 @@
 </template>
 
 <script setup lang="ts">
-import { Icon } from '@iconify/vue'
+import { Icon } from "@iconify/vue";
 const items = [
   {
     id: Math.random().toString(36).substring(7).toUpperCase(),
-    question: 'Why do companies need a privacy policy?',
+    question: "Why do companies need a privacy policy?",
     answer:
-      'Companies need a privacy policy because most countries have laws requiring privacy policies for websites and applications that gather personal data from users; businesses have them.'
+      "Companies need a privacy policy because most countries have laws requiring privacy policies for websites and applications that gather personal data from users; businesses have them.",
   },
   {
     id: Math.random().toString(36).substring(7).toUpperCase(),
-    question: 'Why do companies need a privacy policy?',
+    question: "Why do companies need a privacy policy?",
     answer:
-      'Companies need a privacy policy because most countries have laws requiring privacy policies for websites and applications that gather personal data from users; businesses have them.'
+      "Companies need a privacy policy because most countries have laws requiring privacy policies for websites and applications that gather personal data from users; businesses have them.",
   },
   {
     id: Math.random().toString(36).substring(7).toUpperCase(),
-    question: 'Why do companies need a privacy policy?',
+    question: "Why do companies need a privacy policy?",
     answer:
-      'Companies need a privacy policy because most countries have laws requiring privacy policies for websites and applications that gather personal data from users; businesses have them.'
+      "Companies need a privacy policy because most countries have laws requiring privacy policies for websites and applications that gather personal data from users; businesses have them.",
   },
   {
     id: Math.random().toString(36).substring(7).toUpperCase(),
-    question: 'Why do companies need a privacy policy?',
+    question: "Why do companies need a privacy policy?",
     answer:
-      'Companies need a privacy policy because most countries have laws requiring privacy policies for websites and applications that gather personal data from users; businesses have them.'
-  }
-]
+      "Companies need a privacy policy because most countries have laws requiring privacy policies for websites and applications that gather personal data from users; businesses have them.",
+  },
+];
 
-const selectedId = ref('')
+const selectedId = ref("");
 const selected = (id: any) => {
   if (selectedId.value === id) {
-    selectedId.value = ''
+    selectedId.value = "";
   } else {
-    selectedId.value = id
+    selectedId.value = id;
   }
-}
+};
 </script>
 
 <style scoped>
